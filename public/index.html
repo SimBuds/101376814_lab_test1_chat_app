@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chatterbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="usernameForm">
+        <input type="text" id="username" placeholder="Enter your name">
+        <button onclick="enterChat()">Enter Chat</button>
+    </div>
+    <div id="roomSelection" style="display:none;">
+        <h2>Select a Chat Room:</h2>
+        <select id="roomList">
+            <option value="room1">Full Stack</option>
+            <option value="room2">Neural Networks</option>
+            <option value="room3">Programming in Python</option>
+            <option value="room4">Devops</option>
+            <option value="room5"></option>
+            <option value="room6">Room 6</option>
+        </select>
+        <button onclick="joinRoom()">Join Room</button>
+    </div>
+    <div id="chatWindow" style="display:none;">
+        <div id="messages"></div>
+        <input type="text" id="messageInput" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+        <button onclick="leaveRoom()">Leave Room</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="chat.js"></script>
+</body>
+</html>
