@@ -13,14 +13,14 @@ function joinRoom() {
 
     document.getElementById('roomSelection').style.display = 'none';
     document.getElementById('chatWindow').style.display = 'block';
-    document.getElementById('messages').innerHTML += `<div><strong>System:</strong> You joined ${currentRoom}</div>`;
+    document.getElementById('messages').innerHTML += `<div><strong>System:</strong>joined ${currentRoom}</div>`;
 }
 
 function leaveRoom() {
     socket.emit('leaveRoom', { username: document.getElementById('username').value, room: currentRoom });
     document.getElementById('chatWindow').style.display = 'none';
     document.getElementById('roomSelection').style.display = 'block';
-    document.getElementById('messages').innerHTML = ''; // Clear chat messages
+    //document.getElementById('messages').innerHTML = ''; // Clear chat messages
 }
 
 function sendMessage() {
